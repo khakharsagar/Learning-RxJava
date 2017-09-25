@@ -1,9 +1,18 @@
-package ch1;
+package com.android.chapter.one.model;
 
+import dagger.Module;
+import dagger.Provides;
 import io.reactivex.Observable;
 
-public class Ch1_2 {
-    public static void main(String[] args) {
+@Module
+public class ChapterOneOfTwo {
+
+    @Provides
+    public ChapterOneOfTwo providesObject(){
+        return new ChapterOneOfTwo();
+    }
+
+    public void methodOneOfTwo() {
         Observable<String> myStrings =
                 Observable.just("Alpha", "Beta", "Gamma", "Delta",
                         "Epsilon");
